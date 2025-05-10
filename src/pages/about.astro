@@ -1,17 +1,21 @@
+---
+const pageTitle = "A propos";
+---
+
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Accueil</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Accueil</a>
         <a href="/blog/">Blog</a>
-        <a href="/about/">A propos</a>
+        <a href="/about/">{pageTitle}</a>
 
-        <h1>A propos de moi</h1>
+        <h1>{pageTitle} de moi</h1>
         <h2>... et de mes supers idées !</h2>
         <p>Avant tout, j'essaie de développer mon premier site web avec Astro, un framework JavaScript qui me permet de créer des sites rapides et modernes.</p>
         <p>Tout se passe très bien pour le moment même si je ne sais pas encore bien quoi écrire ici.</p>
