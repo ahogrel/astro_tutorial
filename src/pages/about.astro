@@ -1,5 +1,20 @@
 ---
 const pageTitle = "A propos";
+const identity = {
+	firstname: "Adrien",
+	lastname: "Hogrel",
+	age: 30,
+	occupation: ["Product manager", "Ecrivain", "Guide"],
+	interests: ["Culture", "Communication", "Ecriture"],
+};
+const skills = ["Astro", "Figma", "GitHub", "Markdown", "Notion", "Trello"];
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="fr">
@@ -9,6 +24,17 @@ const pageTitle = "A propos";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+			  color: purple;
+			  font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		  </style>
 	</head>
 	<body>
         <a href="/">Accueil</a>
@@ -19,5 +45,18 @@ const pageTitle = "A propos";
         <h2>... et de mes supers idées !</h2>
         <p>Avant tout, j'essaie de développer mon premier site web avec Astro, un framework JavaScript qui me permet de créer des sites rapides et modernes.</p>
         <p>Tout se passe très bien pour le moment même si je ne sais pas encore bien quoi écrire ici.</p>
+
+		<p> Voici quelques infos sur moi :</p>
+		<ul>
+			<li>Je m'appelle {identity.firstname}, j'ai {identity.age} ans. </li>
+			<li> Je suis à la fois {identity.occupation[0]}, {identity.occupation[1]} et {identity.occupation[2]} ! </li>
+		</ul>
+		<p> Voici quelques unes de mes compétences en gestion de produit :</p>
+		<ul>
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+		{happy && <p>I am happy to be learning Astro!</p>}
+		{finished && <p>I finished this tutorial!</p>}
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
 </html>
