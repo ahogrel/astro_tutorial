@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-
+import Header from '../components/Header.astro';
 const pageTitle = "A propos";
 const identity = {
 	firstname: "Adrien",
@@ -41,10 +41,9 @@ const textCase = "uppercase";
 		  </style>
 	</head>
 	<body>
-		<Navigation />
+		<Header title={pageTitle} />
 
-        <h1>{pageTitle} de moi</h1>
-        <h2>... et de mes supers idées !</h2>
+		<h2>... et de mes supers idées !</h2>
         <p>Avant tout, j'essaie de développer mon premier site web avec Astro, un framework JavaScript qui me permet de créer des sites rapides et modernes.</p>
         <p>Tout se passe très bien pour le moment même si je ne sais pas encore bien quoi écrire ici.</p>
 
