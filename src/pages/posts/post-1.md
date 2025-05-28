@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Norbert Elias et la notion de civilisation"
 pubDate: 2025-05-10
 description: "Brouillon pour une réflexion sur l'intersection entre violence et civilisation"
